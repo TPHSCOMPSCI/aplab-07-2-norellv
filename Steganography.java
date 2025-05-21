@@ -9,14 +9,14 @@ public class Steganography {
     p.setColor(new Color(r, g, b));
 }
   public static void testClearLow(Picture p ) {
-      Picture copy = new Picture(p);
-        Pixel[][] pixels = copy.getPixels2D();
+      Picture result = new Picture(p);
+        Pixel[][] pixels = result.getPixels2D();
         for (Pixel[] row : pixels) {
             for (Pixel pixel : row) {
                 clearLow(pixel);
             }
         }
-        return copy;
+        return result;
   }
   public static void setLow (Pixel p, Color c)
   {
@@ -51,4 +51,13 @@ public class Steganography {
       }
   return copy; 
 }
+  public static boolean canHide(Picture source, Picture secret) {
+        if (source.getWidth() >= secret.getWidth() && source.getHeight() >= secret.getHeight()) {
+        }  
+          return true; 
+        else {
+          return false; 
+        }
+  }
+    
 }
