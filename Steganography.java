@@ -20,7 +20,11 @@ public class Steganography {
   }
   public static void setLow (Pixel p, Color c)
   {
-  
+    int r = (p.getRed() & 0b11111100) | (c.getRed() >> 6);
+    int g = (p.getGreen() & 0b11111100) | (c.getGreen() >> 6);
+    int b = (p.getBlue() & 0b11111100) | (c.getBlue() >> 6);
+    p.setColor(new Color(r, g, b));
+
   }
   public static Picture testSetLow(Picture p, Color c) {
       Picture copy = new Picture(p);
