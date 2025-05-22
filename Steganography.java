@@ -20,9 +20,7 @@ public class Steganography {
   }
   public static void setLow (Pixel p, Color c)
   {
-    int r = (p.getRed() & 0b11111100) | (c.getRed() >> 6);
-    int g = (p.getGreen() & 0b11111100) | (c.getGreen() >> 6);
-    int b = (p.getBlue() & 0b11111100) | (c.getBlue() >> 6);
+
     p.setColor(new Color(r, g, b));
 
   }
@@ -46,7 +44,7 @@ public class Steganography {
       {
       for (int c = 0; c < pixels[0].length; c++ t ) {
     Color col = source[r][c].getColor();
-    pixels[r][c].setColor(new Color(((pixels[r][c].getRed() & 0b00000011) << 6),((pixels[r][c].getGreen() & 0b00000011) << 6), ((pixels[r][c].getBlue() & 0b00000011) << 6)));
+
     }
       }
   return copy; 
